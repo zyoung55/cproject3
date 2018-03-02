@@ -28,13 +28,17 @@ var app = new Vue({
 		console.log(this.calenderSize);
 	    },
 	    addEvent: function() {
-		Vue.set(app.calenderInformation, this.number, new Array);
-		this.calenderInformation[this.number].push({month: this.calenderMonth, day: this.dayOfMeal, food: this.nameOfFood,
-			    time: this.timeOfMeal, calories: this.caloriesInFood, description: this.descriptionOfMeal});
+		    Vue.set(app.calenderInformation, this.number, new Array);
+		    this.calenderInformation[this.number] = {month:this.calenderMonth, day:this.dayOfMeal, food:this.nameOfFood,
+			    time:this.timeOfMeal, calories:this.caloriesInFood, description:this.descriptionOfMeal};
 		this.setMonthDayCount(this.calenderMonth);
+		console.log(this.calenderInformation[0]["month"]);
+		console.log(this.calenderInformation[this.number].day);
 		console.log("calenderMonth", this.calenderMonth);
 		console.log("day", this.dayOfMeal);
-		//this.calenderMonth = ' ';
+		console.log("fod", this.nameOfFood);
+		console.log("time", this.timeOfMeal);
+		this.calenderMonth = ' ';
 		this.dayOfMeal = ' ';
 		this.nameOfFood = ' ';
 		this.timeOfMeal = ' ';

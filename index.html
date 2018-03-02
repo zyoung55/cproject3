@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Lab 3</title>
-<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="http://138.68.26.70/style.css"/>
 </head>
 <body>
 <div id="app">
@@ -10,6 +10,7 @@
   <div id="slogan">
     <h2><em>Plan better, eat better, live happier.</em></h2>
   </div>
+  <h4><em>unfinished</em></h4>
   <h3>Add an event to the calender:</h3>
   <form v-on:submit.prevent="addEvent">
     <input v-model="calenderMonth" placeholder="Month (enter number)"/></p>
@@ -23,11 +24,14 @@
   </form>
   <p>Calender month: {{calenderMonth}}</p>
   <p>Calender Size {{calenderSize}}</p>
+ <!--<div v-for="calenderInformation in calenderInformation[i]">-->
   <div v-if="calenderSize == 28" class="listItemGrid">
-    <!--<div v-for="calenderInformation in calenderInformation[i]">-->
       <ul class="month">
 	<div>
-	  <li class="listItem">1</li>
+	  <div v-for="calenderInformation in calenderInformation[i]">
+	    <li class="listItem">1<p v-if="calenderInformation.day == 1"><p>{{calenderInformation.time}}</p> <p>{{calenderInformation.time}}</p>
+	      <p>{{calenderInformation.calories}}</p><p>{{calenderInformation.description}}</p></p></li>
+	  </div>
 	</div>
 	<div>
 	  <li class="listItem">2</li>
@@ -302,7 +306,8 @@
           <li class="listItem">31</li>
         </div>
         </ul>
-  </div>
+    </div>
+  <!--</div>-->
 </div>
 <footer>
   <ul>
@@ -310,6 +315,6 @@
   </ul>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-<script src="script.js"></script>
+<script src="http://138.68.26.70/script.js"></script>
 </body>
 </html>
