@@ -1,0 +1,62 @@
+#slogan {
+    text-align: center;
+    background-color: #2F99FF;
+}
+
+body {
+     background-color: #EDEFFF;
+}
+
+em {
+    color: white;
+}
+
+h1 {
+   font-style: Serif;
+   text-align: center;
+}
+
+h2 {
+   text-align: center;
+   font-size: 20px;
+}
+
+h4 {
+   display: block;
+}
+
+footer a {
+       text-decoration: none;
+       color: white;
+}
+
+footer li {
+       display: block;
+       text-align: center;
+}
+
+footer {
+       background-color: #2F99FF;
+}
+
+.month {
+       text-decoration: none;
+       display: grid;
+}
+
+.listItem {
+	 display: inline;
+	 float: left;
+	 width: 14%;
+	 border: 1px solid;
+	 padding-bottom: 20px;
+}
+
+.calenderDayDiv {
+	width: 30%;
+}
+
+#month {
+       margin: 0;
+       padding: 0;
+}

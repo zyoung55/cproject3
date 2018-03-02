@@ -2,7 +2,314 @@
 <html>
 <head>
 <title>Lab 3</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+<div id="app">
+  <h1>Planner Fitness</h1>
+  <div id="slogan">
+    <h2><em>Plan better, eat better, live happier.</em></h2>
+  </div>
+  <h3>Add an event to the calender:</h3>
+  <form v-on:submit.prevent="addEvent">
+    <input v-model="calenderMonth" placeholder="Month (enter number)"/></p>
+    <input v-model="dayOfMeal" placeholder="Day"></p>
+    <input v-model="nameOfFood" placeholder="Food Name"></p>
+    <input v-model="timeOfMeal" placeholder="Meal Time"></p>
+    <input v-model="caloriesInFood" placeholder="Calories (enter number)"></p>
+    <textarea v-model="descriptionOfMeal" placeholder="Additional Info"></textarea>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  <p>Calender month: {{calenderMonth}}</p>
+  <p>Calender Size {{calenderSize}}</p>
+  <div v-if="calenderSize == 28" class="listItemGrid">
+    <!--<div v-for="calenderInformation in calenderInformation[i]">-->
+      <ul class="month">
+	<div>
+	  <li class="listItem">1</li>
+	</div>
+	<div>
+	  <li class="listItem">2</li>
+	</div>
+	<div>
+	  <li class="listItem">3</li>
+	</div>
+	<div>
+	  <li class="listItem">4</li>
+	</div>
+	<div>
+	  <li class="listItem">5</li>
+	</div>
+	<div>
+	  <li class="listItem">6</li>
+	</div>
+	<div>
+	  <li class="listItem">7</li>
+	</div>
+	<div>
+	  <li class="listItem">8</li>
+	</div>
+	<div>
+	  <li class="listItem">9</li>
+	</div>
+	<div>
+	  <li class="listItem">10</li>
+	</div>
+	<div>
+	  <li class="listItem">11</li>
+	</div>
+	<div>
+	  <li class="listItem">12</li>
+	</div>
+	<div>
+	  <li class="listItem">13</li>
+	</div>
+	<div>
+	  <li class="listItem">14</li>
+	</div>
+	<div>
+	  <li class="listItem">15</li>
+	</div>
+	<div>
+	  <li class="listItem">16</li>
+	</div>
+	<div>
+	  <li class="listItem">17</li>
+	</div>
+	<div>
+	  <li class="listItem">18</li>
+	</div>
+	<div>
+	  <li class="listItem">19</li>
+	</div>
+	<div>
+	  <li class="listItem">20</li>
+	</div>
+	<div>
+	  <li class="listItem">21</li>
+	</div>
+	<div>
+	  <li class="listItem">22</li>
+	</div>
+	<div>
+	  <li class="listItem">23</li>
+	</div>
+	<div>
+	  <li class="listItem">24</li>
+	</div>
+	<div>
+	  <li class="listItem">25</li>
+	</div>
+	<div>
+	  <li class="listItem">26</li>
+	</div>
+	<div>
+	  <li class="listItem">27</li>
+	</div>
+	<div>
+	  <li class="listItem">28</li>
+	</div>
+     </ul>
+  </div>
+<div v-if="calenderSize === 30" class="listItemGrid">
+  <ul class="month">
+        <div>
+          <li class="listItem">1</li>
+        </div>
+        <div>
+          <li class="listItem">2</li>
+        </div>
+	<div>
+          <li class="listItem">3</li>
+        </div>
+        <div>
+          <li class="listItem">4</li>
+        </div>
+        <div>
+          <li class="listItem">5</li>
+        </div>
+        <div>
+          <li class="listItem">6</li>
+        </div>
+        <div>
+          <li class="listItem">7</li>
+        </div>
+        <div>
+          <li class="listItem">8</li>
+        </div>
+        <div>
+          <li class="listItem">9</li>
+        </div>
+        <div>
+          <li class="listItem">10</li>
+        </div>
+        <div>
+          <li class="listItem">11</li>
+        </div>
+        <div>
+          <li class="listItem">12</li>
+        </div>
+        <div>
+          <li class="listItem">13</li>
+        </div>
+        <div>
+          <li class="listItem">14</li>
+        </div>
+        <div>
+          <li class="listItem">15</li>
+        </div>
+        <div>
+          <li class="listItem">16</li>
+        </div>
+        <div>
+          <li class="listItem">17</li>
+        </div>
+        <div>
+          <li class="listItem">18</li>
+        </div>
+        <div>
+          <li class="listItem">19</li>
+        </div>
+        <div>
+          <li class="listItem">20</li>
+        </div>
+        <div>
+          <li class="listItem">21</li>
+        </div>
+        <div>
+          <li class="listItem">22</li>
+        </div>
+        <div>
+          <li class="listItem">23</li>
+        </div>
+        <div>
+          <li class="listItem">24</li>
+        </div>
+        <div>
+          <li class="listItem">25</li>
+        </div>
+        <div>
+          <li class="listItem">26</li>
+        </div>
+        <div>
+          <li class="listItem">27</li>
+        </div>
+	<div>
+          <li class="listItem">28</li>
+        </div>
+        <div>
+          <li class="listItem">29</li>
+        </div>
+	<div>
+          <li class="listItem">30</li>
+	  </div>
+	</ul>
+  </div>
+<div v-if="calenderSize === 31" class="listItemGrid">
+  <ul class="month">
+        <div>
+          <li class="listItem">1</li>
+        </div>
+        <div>
+          <li class="listItem">2</li>
+        </div>
+        <div>
+          <li class="listItem">3</li>
+        </div>
+        <div>
+          <li class="listItem">4</li>
+        </div>
+        <div>
+          <li class="listItem">5</li>
+        </div>
+        <div>
+          <li class="listItem">6</li>
+        </div>
+        <div>
+          <li class="listItem">7</li>
+        </div>
+        <div>
+          <li class="listItem">8</li>
+        </div>
+        <div>
+          <li class="listItem">9</li>
+        </div>
+        <div>
+          <li class="listItem">10</li>
+        </div>
+        <div>
+          <li class="listItem">11</li>
+        </div>
+        <div>
+          <li class="listItem">12</li>
+        </div>
+	<div>
+          <li class="listItem">13</li>
+        </div>
+        <div>
+          <li class="listItem">14</li>
+        </div>
+        <div>
+          <li class="listItem">15</li>
+        </div>
+        <div>
+          <li class="listItem">16</li>
+        </div>
+        <div>
+          <li class="listItem">17</li>
+        </div>
+        <div>
+          <li class="listItem">18</li>
+        </div>
+        <div>
+          <li class="listItem">19</li>
+        </div>
+        <div>
+          <li class="listItem">20</li>
+        </div>
+        <div>
+          <li class="listItem">21</li>
+        </div>
+        <div>
+          <li class="listItem">22</li>
+        </div>
+        <div>
+          <li class="listItem">23</li>
+        </div>
+	<div>
+          <li class="listItem">24</li>
+        </div>
+        <div>
+          <li class="listItem">25</li>
+        </div>
+        <div>
+          <li class="listItem">26</li>
+        </div>
+        <div>
+          <li class="listItem">27</li>
+        </div>
+        <div>
+          <li class="listItem">28</li>
+        </div>
+        <div>
+          <li class="listItem">29</li>
+        </div>
+        <div>
+          <li class="listItem">30</li>
+        </div>
+	<div>
+          <li class="listItem">31</li>
+        </div>
+        </ul>
+  </div>
+</div>
+<footer>
+  <ul>
+    <li><a href="https://github.com/zyoung55/cproject3">Link to Github</a></li>
+  </ul>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
